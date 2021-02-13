@@ -1,0 +1,33 @@
+# GENERAL IGNORE
+extra/
+*.docx
+
+# PARTICULAR IGNORE
+appliances.m
+costs.m
+dat2homer.m
+importfile.m
+objective.m
+optGCHPS.m
+optSAHPS.m
+reliability.m
+simGCHPS.m
+test_SAHPS.m
+updateHS.m
+test_GCHPS.m
+
+# FILES INCLUDE IN FIRST COMMIT
+# case_base.m
+# loadResources.m
+# prices.m
+# printResults.m
+# simSAHPS.m
+# updateLoad.m        
+# updateRen.m        
+        
+        
+        
+        
+        
+        
+        
