@@ -1,6 +1,8 @@
 # GENERAL IGNORE
 extra/
 *.docx
+*.png
+*.txt
 
 # PARTICULAR IGNORE
 appliances.m
@@ -16,7 +18,7 @@ test_SAHPS.m
 updateHS.m
 test_GCHPS.m
 
-# FILES INCLUDE IN FIRST COMMIT
+# FILES INCLUDE IN THIS FIRST VERSION
 # case_base.m
 # loadResources.m
 # prices.m

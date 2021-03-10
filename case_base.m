@@ -16,8 +16,8 @@ hs.S.estado = [];               % Different states of the hybrid system during t
 hs.S.powerDef = [];              % Deficit power of the simulation
 hs.S.powerExc = [];               % Excess power of the simulation
 %% Resources files
-hs.RES.GFile = 'GfixFile';      % File with the information of the Irradiance(Global Irradiance on fix plane (W/m2), on sun-tracking plane (W/m2) and temperature (ºC)
-hs.RES.wsFile = 'wsFile';       % File with the information of wind speed
+hs.RES.GFile = '.\data\GfixFile';      % File with the information of the Irradiance(Global Irradiance on fix plane (W/m2), on sun-tracking plane (W/m2) and temperature (ºC)
+hs.RES.wsFile = '.\data\wsFile';       % File with the information of wind speed
 %% PV panel
 hs.PV.resources = [];           % Matrix of 3 colums [G, A, T] (Global Irradiance on fix plane (W/m2), on sun-tracking plane (W/m2) and temperature (ºC) and as many rows as samples
 hs.PV.power = [];               % Matrix of 3 colums [Pgen, Pnet, Ploss] in W and as many rows as samples
