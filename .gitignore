@@ -16,12 +16,10 @@ objective.m
 optGCHPS.m
 optSAHPS.m
 reliability.m
-simGCHPS.m
-test_SAHPS.m
-test_GCHPS.m
-case_base.m
-
-      
+prices.m
+test_optimize_SAHPS.m
+test_optimize_GCHPS.m
+data/price.dat      
         
         
         

@@ -3,6 +3,7 @@ function hs = base_case()
 % Use the loadResources and updateHS functions before simulate or optimize
 % this system.
 %
+% hs = base_case()
 %
 % Autor: Antonio J. Gil Mena
 % Departamento de Ingeniería Eléctrica
