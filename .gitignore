@@ -3,8 +3,11 @@ extra/
 *.docx
 *.png
 *.txt
+*.pdf
+*.asv
 
 # PARTICULAR IGNORE
+# These are files in progress or deleted. They are not totally finished.
 appliances.m
 costs.m
 dat2homer.m
@@ -15,17 +18,11 @@ optSAHPS.m
 reliability.m
 simGCHPS.m
 test_SAHPS.m
-updateHS.m
 test_GCHPS.m
-
-# FILES INCLUDE IN THIS FIRST VERSION
-# case_base.m
-# loadResources.m
-# prices.m
-# printResults.m
-# simSAHPS.m
-# updateLoad.m        
-# updateRen.m        
+case_base.m
+prices.m
+price.mat
+      
         
         
         

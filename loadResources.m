@@ -15,21 +15,31 @@ function hs = loadResources(hs)
 %
 
 load(hs.RES.GFile); % variables saved in Gfile must be Gfix, Gtrack and Temp
+
+
 if exist('Gfix','var')
-    hs.PV.resources = [Gfix]; 
-    if exist('Gtrack','var')
-        hs.PV.resources = [Gfix,Gtrack]; 
-        if exist('Temp','var')
-            hs.PV.resources = [Gfix,Gtrack,Temp];
-        end
-    end
+	if hs.S.n==size(Gfix,1)
+		hs.PV.resources = [Gfix]; 
+		if exist('Gtrack','var')
+			hs.PV.resources = [Gfix,Gtrack]; 
+			if exist('Temp','var')
+				hs.PV.resources = [Gfix,Gtrack,Temp];
+			end
+		end
+	else
+		error(' The size of the Gfix variable must coincide with the number of samples (hs.S.n)');
+	end
 else
     error(' Variable Gfix does not exist');
 end
 
 load(hs.RES.wsFile); % variable saved in vfile must be ws
 if exist('ws','var')
-    hs.WT.v = ws; 
+    if hs.S.n==size(ws,1)
+		hs.WT.v = ws; 
+	else
+		error(' The size of the ws variable must coincide with the number of samples (hs.S.n)');
+	end	
 else
     error(' Variable ws does not exist');
 end

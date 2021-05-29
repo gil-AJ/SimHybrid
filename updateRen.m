@@ -1,5 +1,5 @@
 function hs = updateRen(hs)
-% This function update the renewable powers as the loads of the system.
+% This function updates the renewable powers as the loads of the system.
 % This function might be called every time the parameters that affect to
 % the powers are modified.
 %

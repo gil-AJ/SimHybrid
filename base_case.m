@@ -1,7 +1,7 @@
-function hs = case_base()
+function hs = base_case()
 % Hybrid system data.
 % Use the loadResources and updateHS functions before simulate or optimize
-% the system.
+% this system.
 %
 %
 % Autor: Antonio J. Gil Mena
@@ -10,11 +10,12 @@ function hs = case_base()
 % Derechos reservados (C) 2021 Antonio J. Gil Mena
 %
 %% Simulation parameters
-hs.S.n = 288;                   % Number of samples
-hs.S.tsim = 24/hs.S.n;          % Time step expressed in hours
-hs.S.estado = [];               % Different states of the hybrid system during the simulation (Five states. See simSHAPS.m file)
-hs.S.powerDef = [];              % Deficit power of the simulation
-hs.S.powerExc = [];               % Excess power of the simulation
+hs.S.simtime = 1;					% Simulation time in days
+hs.S.tsim = 5/60;					% Time step expressed in hours
+hs.S.n = 24*hs.S.simtime/hs.S.tsim;	% Number of samples
+hs.S.estado = [];					% Different states of the hybrid system during the simulation (Five states. See simSHAPS.m file)
+hs.S.powerDef = [];					% Deficit power of the simulation
+hs.S.powerExc = [];					% Excess power of the simulation
 %% Resources files
 hs.RES.GFile = '.\data\GfixFile';      % File with the information of the Irradiance(Global Irradiance on fix plane (W/m2), on sun-tracking plane (W/m2) and temperature (ºC)
 hs.RES.wsFile = '.\data\wsFile';       % File with the information of wind speed
@@ -65,9 +66,12 @@ hs.CONV.data.kW = 10;           % Rated power of the main converter DC/AC
 hs.CONV.data.effi = 0.95;       % Converter efficiency
 hs.CONV.data.invcost = 350;     % €/kW
 %% Loads 
-hs.LOAD.fix = [];               % Fix power demand in W. A vector of 1 x n samples
-hs.LOAD.shift = [];             % Shiftable loads in W. A matrix of the number of shiftlable loads x n samples
-hs.LOAD.power = [];             % Fix plus shiftable loads in W.  
+hs.LOAD.fix = [];							% Fix power demand in W. A vector of 1 x n samples
+hs.LOAD.shift = [];							% Shiftable loads in W. A matrix of the number of shiftlable loads x n samples
+hs.LOAD.commercial = '.\data\CommLoadFile';	% File with data
+hs.LOAD.industrial = '.\data\IndLoadFile';  %
+hs.LOAD.general = '.\data\GenLoadFile';		%
+hs.LOAD.power = [];							% Fix plus shiftable loads in W.  
 hs.LOAD.energy = []; 
 %                       NAME             RPOWER(kW)  ENABLE  SHIFTABLE  START                   END                             MIN_HOUR    MAX HOUR  HOURS      HOURLYD* 
 hs.LOAD.appliances = {  'Washing machine'   0.450       1       1       [10]                    [12]                            [8]         [22]      [2]
@@ -101,7 +105,7 @@ hs.GRID.power = [];             % Power from/to the grid
 hs.opt.objFile = 'objective';   % Objective function to be optimized
 hs.opt.objIndex = 'COEg';       % Selection of the index to be optimized by the 'ojective' function.
                                 % These indexes can be: COE,COG,BOG,COGE,NPC,LOLE,LOEE,LPSP and LLP
-hs.opt.maxiter = 200;            % Maximun number of iterations for the optimization problem
+hs.opt.maxiter = 200;           % Maximun number of iterations for the optimization problem
 hs.opt.popsize = 40;            % Population size of the state variables
 hs.opt.runno = 1;               % The runno is the times that the algorithm runs (used for statistics)
 hs.opt.penaltyValue = 1e12;     % High value in order to discard no feasible solutions

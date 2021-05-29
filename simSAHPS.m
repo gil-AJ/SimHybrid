@@ -19,7 +19,8 @@ PWT = hs.WT.power(:,2);
 PPV = hs.PV.power(:,2);
 PREN = PWT+PPV;
 PBATmax = hs.BATT.data.Wh;  % Discharge/charge rate = C1
-PLOAD = hs.LOAD.fix + sum(hs.LOAD.shift')';
+%PLOAD = hs.LOAD.fix + sum(hs.LOAD.shift')';
+PLOAD = hs.LOAD.power;
 PGENKW = hs.DG.data.kVA;
 nc = hs.CONV.data.effi;
 nb = hs.BATT.data.effi;
