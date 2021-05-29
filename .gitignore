@@ -19,7 +19,7 @@ reliability.m
 prices.m
 test_optimize_SAHPS.m
 test_optimize_GCHPS.m
-data/price.dat      
+data/price.mat      
         
         
         
